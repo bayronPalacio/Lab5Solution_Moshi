@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Lab5Solution</string>
+    <string name="name_author">Bayron Arturo Palacio</string>
+    <string name="btn_main">NEXT PAGE</string>
+    <string name="btn_search">SEARCH</string>
+    <string name="btn_add">ADD</string>
+    <string name="btn_delete">DELETE</string>
+    <string name="btn_update">UPDATE</string>
 </resources>

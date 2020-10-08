@@ -4,8 +4,6 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import com.example.lab5solution.Converters
-import java.util.*
-import kotlin.collections.ArrayList
 
 //movie_id, plot_summary, duration, genre, rating, release_date, plot_synopsis
 

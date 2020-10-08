@@ -2,18 +2,17 @@ package com.example.lab5solution
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import java.lang.reflect.Type
-import java.util.*
-import kotlin.collections.ArrayList
-
 
 class Converters {
     companion object{
         @TypeConverter
         @JvmStatic
-        fun fromList(value:List<String>):String{
-            return value.toString()
+        fun fromList(value:List<String>): String {
+            var genreString = ""
+            for(item in value){
+                genreString += "$item, "
+            }
+            return genreString
         }
 
         @TypeConverter

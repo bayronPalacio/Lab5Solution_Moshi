@@ -23,28 +23,16 @@ class MainView (ctx : Activity, fileName: String){
     private val myType = Types.newParameterizedType(List::class.java, Movie::class.java)
 
     init {
-        Log.i("MainView", "init")
         val text = FileHelper.getDataFromAssets(ctx,fileName)
-        Log.i("MainView", text)
 
         // Using data class Movie
         val moshi: Moshi = Moshi.Builder().build()
         val adapter : JsonAdapter<List<Movie>> = moshi.adapter(myType)
         val empList = adapter.fromJson(text)
-//        if (empList != null) {
-//            println("size "+ empList.size.toString())
-//        }
+
         // ?: Elvis Operator
         for (e in empList ?: emptyList() ) {
             Observable.fromCallable {
-                var genreString : String = ""
-//                var genreList : Array<String> = e.genre as Array<String>
-//                if(genreList.size > 0)
-//                {
-//                    for(item in genreList){
-//                        genreString += "$item, "
-//                    }
-//                }
                 //An instance of the Database and movieDao are created
                 dataBaseMovie = MovieDatabase.getAppDataBase(context = ctx)
                 movieDao = dataBaseMovie?.movieDao()
@@ -60,8 +48,6 @@ class MainView (ctx : Activity, fileName: String){
             }.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe()
-            Log.i("JSON", "Movie: ID: ${e.movie_id} \n summary: ${e.plot_summary} \n duration ${e.duration} \n genre $e" +
-                    "\n rating ${e.rating} \n release date ${e.release_date} \n plot synopsis ${e.plot_synopsis}")
         }
 
     }
