@@ -36,30 +36,30 @@ class MainView (ctx : Activity, fileName: String){
 //        }
         // ?: Elvis Operator
         for (e in empList ?: emptyList() ) {
-////            Observable.fromCallable {
-////                var genreString : String = ""
-////                var genreList : Array<String> = e.genre as Array<String>
-////                if(genreList.size > 0)
-////                {
-////                    for(item in genreList){
-////                        genreString += "$item, "
-////                    }
-////                }
-////                //An instance of the Database and movieDao are created
-////                dataBaseMovie = MovieDatabase.getAppDataBase(context = ctx)
-////                movieDao = dataBaseMovie?.movieDao()
-////
-////                //A Movie object is created with the information from the jsonFile
-////                var newMovie = Movie(movie_id = e.movie_id, plot_summary = e.plot_summary, duration = e.duration,
-////                    genre = genreString, rating = e.rating, release_date = e.release_date, plot_synopsis = e.plot_synopsis )
-////
-////                with(movieDao) {
-////                    //The Movie object is added to the database through the movieDao with the insertMovie() method
-////                    this?.insertMovie(newMovie)
-////                }
-////            }.subscribeOn(Schedulers.io())
-////                .observeOn(AndroidSchedulers.mainThread())
-////                .subscribe()
+            Observable.fromCallable {
+                var genreString : String = ""
+//                var genreList : Array<String> = e.genre as Array<String>
+//                if(genreList.size > 0)
+//                {
+//                    for(item in genreList){
+//                        genreString += "$item, "
+//                    }
+//                }
+                //An instance of the Database and movieDao are created
+                dataBaseMovie = MovieDatabase.getAppDataBase(context = ctx)
+                movieDao = dataBaseMovie?.movieDao()
+
+                //A Movie object is created with the information from the jsonFile
+                var newMovie = Movie(movie_id = e.movie_id, plot_summary = e.plot_summary, duration = e.duration,
+                    genre = e.genre, rating = e.rating, release_date = e.release_date, plot_synopsis = e.plot_synopsis )
+
+                with(movieDao) {
+                    //The Movie object is added to the database through the movieDao with the insertMovie() method
+                    this?.insertMovie(newMovie)
+                }
+            }.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe()
             Log.i("JSON", "Movie: ID: ${e.movie_id} \n summary: ${e.plot_summary} \n duration ${e.duration} \n genre $e" +
                     "\n rating ${e.rating} \n release date ${e.release_date} \n plot synopsis ${e.plot_synopsis}")
         }

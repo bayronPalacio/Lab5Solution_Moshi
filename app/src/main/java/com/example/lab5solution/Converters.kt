@@ -2,24 +2,24 @@ package com.example.lab5solution
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.lang.reflect.Type
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class Converters {
-
-    @TypeConverter
-    fun arrayToString(value: Array<String>): String? {
-        var genre = ""
-        if (value != null) {
-            if(value.isNotEmpty()) {
-                for(items in value)
-                    genre += "$items, "
-            } else {
-                genre = ""
-            }
+    companion object{
+        @TypeConverter
+        @JvmStatic
+        fun fromList(value:List<String>):String{
+            return value.toString()
         }
-        return genre
-    }
 
-    @TypeConverter
-    fun stringTo(value: String) = Gson().fromJson(value,Array<String>::class.java).toList()
+        @TypeConverter
+        @JvmStatic
+        fun toList(value:String):List<String>{
+            return Gson().fromJson(value,Array<String>::class.java).toList()
+        }
+    }
 }
