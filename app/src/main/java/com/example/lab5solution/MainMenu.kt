@@ -21,6 +21,7 @@ class MainMenu : AppCompatActivity() {
         recycleViewMovie.layoutManager = gm
         val myMovieAdapter = MovieAdapter(listOfMovies, this)
         recycleViewMovie.setAdapter(myMovieAdapter)
+        myMovieAdapter.ChangeData(listOfMovies)
 
         btnAdd.setOnClickListener {
             var goToAddPage = Intent(this, AddMovie::class.java)
