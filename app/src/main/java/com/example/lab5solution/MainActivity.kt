@@ -42,21 +42,9 @@ class MainActivity : AppCompatActivity() {
         Thread.sleep(500)
 
         btnMain.setOnClickListener {
-            for(movie in allMovies!!)
-            {
-                Log.i("ID",movie.movie_id)
-            }
-//            val bundleMovies : Bundle ?= null
-////            bundleMovies?.putParcelableArrayList("movies", allMovies as java.util.ArrayList<out Parcelable> )
-////            bundleMovies?.putParcelableArrayList("movies",allMovies as List<Movie>)
-//            bundleMovies?.putString("passString","hello from main activity")
             var goToNextPage = Intent(this,MainMenu::class.java)
-//            goToNextPage?.putExtra("dataList",allMovies as List<Movie>)
-//            goToNextPage.putExtra("passString","hello from Main Activity")
-//            if (bundleMovies != null) {
-//                goToNextPage.putExtras(bundleMovies)
-//                startActivity(goToNextPage)
-            }
-
+            goToNextPage.putExtra("data",allMovies as Serializable)
+            startActivity(goToNextPage)
+        }
     }
 }

@@ -4,13 +4,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import com.example.lab5solution.Converters
-import kotlinx.serialization.Serializable
+import java.io.Serializable
 
 //movie_id, plot_summary, duration, genre, rating, release_date, plot_synopsis
-
-@kotlinx.serialization.Serializable
 @Entity(tableName = "movies")
-data class Movie(
+data class Movie (
     @PrimaryKey val movie_id: String = "",
     val plot_summary: String = "",
     val duration: String = "",
@@ -21,4 +19,4 @@ data class Movie(
     val rating: String = "",
     val release_date: String = "",
     val plot_synopsis: String = ""
-)
+) : Serializable
