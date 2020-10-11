@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateMovie">
+
+    <TextView
+        android:id="@+id/updateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="21dp"
+        android:text="@string/update_title"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/inputUpdateId"
+        app:layout_constraintEnd_toEndOf="@+id/inputUpdateId"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputUpdateId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:hint="@string/update_input_id"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btnGetMovie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateTitle" />
+
+    <Button
+        android:id="@+id/btnGetMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/update_btn_get_movie"
+        app:layout_constraintBottom_toTopOf="@+id/updateDuration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputUpdateId" />
+
+    <EditText
+        android:id="@+id/updateDuration"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="17dp"
+        android:hint="@string/update_duration"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/updateRating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGetMovie" />
+
+    <EditText
+        android:id="@+id/updateRating"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="13dp"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/updateReleaseDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateDuration" />
+
+    <EditText
+        android:id="@+id/updateReleaseDate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="23dp"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btn_update_movie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateRating" />
+
+    <Button
+        android:id="@+id/btn_update_movie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="236dp"
+        android:text="@string/update_whole_movie"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateReleaseDate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

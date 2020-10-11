@@ -5,6 +5,7 @@ import com.example.lab5solution.data.Movie
 
 @Dao
 interface MovieDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMovie(movie: Movie)
 
@@ -12,11 +13,14 @@ interface MovieDao {
     fun updateMovie(movie: Movie)
 
     @Delete
-    fun deleteMovie(student: Movie)
+    fun deleteMovie(movie: Movie)
 
     @Query("SELECT * FROM movies")
-    fun getAllStudents():List<Movie>
+    fun getAllMovies():List<Movie>
 
-//    @Query("SELECT * FROM movies WHERE movie_id ==:inputMovieId")
-//    fun getStudentByEmail(inputEmail: String):Movie
+    @Query("SELECT * FROM movies WHERE movie_id ==:inputId")
+    fun getMovieById(inputId: String):Movie
+
+    @Query("SELECT * FROM movies WHERE release_date ==:inputDate")
+    fun searchByReleaseDate(inputDate: String):Movie
 }

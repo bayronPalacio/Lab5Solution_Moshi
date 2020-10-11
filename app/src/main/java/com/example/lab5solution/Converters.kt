@@ -8,11 +8,12 @@ class Converters {
         @TypeConverter
         @JvmStatic
         fun fromList(value:List<String>): String {
-            var genreString = ""
-            for(item in value){
-                genreString += "$item, "
-            }
-            return genreString
+//            var genreString = ""
+//            for(item in value){
+//                genreString += "$item, "
+//            }
+//            return genreString
+            return value.toString()
         }
 
         @TypeConverter
@@ -20,5 +21,7 @@ class Converters {
         fun toList(value:String):List<String>{
             return Gson().fromJson(value,Array<String>::class.java).toList()
         }
+
+
     }
 }

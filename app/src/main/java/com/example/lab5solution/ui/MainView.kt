@@ -1,7 +1,6 @@
 package com.example.lab5solution.ui
 
 import android.app.Activity
-import android.util.Log
 import androidx.room.TypeConverter
 import com.example.lab5solution.Converters
 import com.example.lab5solution.MovieDao
@@ -38,7 +37,8 @@ class MainView (ctx : Activity, fileName: String){
                 movieDao = dataBaseMovie?.movieDao()
 
                 //A Movie object is created with the information from the jsonFile
-                var newMovie = Movie(movie_id = e.movie_id, plot_summary = e.plot_summary, duration = e.duration,
+                var newMovie = Movie(
+                    movie_id = e.movie_id, plot_summary = e.plot_summary, duration = e.duration,
                     genre = e.genre, rating = e.rating, release_date = e.release_date, plot_synopsis = e.plot_synopsis )
 
                 with(movieDao) {

@@ -6,4 +6,27 @@
     <string name="btn_add">ADD</string>
     <string name="btn_delete">DELETE</string>
     <string name="btn_update">UPDATE</string>
+    <string name="add_id">ENTER MOVIE ID</string>
+    <string name="add_title">ADD A MOVIE</string>
+    <string name="add_plot_summary">ENTER PLOT SUMMARY</string>
+    <string name="add_duration">ENTER MOVIE DURATION</string>
+    <string name="add_genre">ENTER MOVIE GENRE</string>
+    <string name="add_rating">ENTER MOVIE RATING</string>
+    <string name="add_release_date">ENTER MOVIE RELEASE DATE</string>
+    <string name="add_plot_synopsis">ENTER MOVIE SYNOPSIS</string>
+    <string name="btn_add_movie">ADD MOVIE TO DB</string>
+    <string name="delete_id">Please enter id to remove movie</string>
+    <string name="delete_btn">DELETE MOVIE</string>
+    <string name="search_screen">SEARCH BY RELEASE DATE</string>
+    <string name="search_input_date">PLEASE ENTER DATE</string>
+    <string name="btn_search_movie">SEARCH MOVIE</string>
+    <string name="update_title">UPDATE MOVIE</string>
+    <string name="update_input_id">PLEASE ENTER MOVIE ID</string>
+    <string name="update_btn_get_movie">GET MOVIE</string>
+    <string name="update_duration">MOVIE DURATION</string>
+    <string name="update_release_date">MOVIE RELEASE DATE</string>
+    <string name="update_rating">MOVIE RATING</string>
+    <string name="update_whole_movie">UPDATE MOVIE</string>
+
+
 </resources>
