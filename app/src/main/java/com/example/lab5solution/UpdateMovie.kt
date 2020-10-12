@@ -79,3 +79,23 @@ class UpdateMovie : AppCompatActivity() {
         }
     }
 }
+
+/////////////Below copy on top of the grandle file, below the old ones
+//apply plugin: 'kotlin-kapt'
+//
+/////////////Below copy inside dependencies
+//
+//implementation 'com.squareup.moshi:moshi:1.8.0'
+//implementation "com.squareup.moshi:moshi-adapters:1.8.0"
+//implementation "com.squareup.moshi:moshi-kotlin:1.8.0"
+//
+//implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.0.0")
+//
+//def room_version = "2.2.0-rc01"
+//
+//implementation "androidx.room:room-runtime:$room_version"
+//kapt "androidx.room:room-compiler:$room_version"
+//
+//implementation 'com.google.code.gson:gson:2.2.4'
+//implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+//implementation 'io.reactivex.rxjava2:rxjava:2.0.4'

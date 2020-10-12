@@ -17,9 +17,6 @@ class MovieAdapter() : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     var movieList: List<Movie> = ArrayList<Movie>()
     var context: Context? = null
 
-//    constructor(parcel: Parcel) : this() {
-//    }
-
     constructor(myMovieList: List<Movie?>, mainMenu: MainMenu) : this() {
         movieList = myMovieList as List<Movie>
         this.context = mainMenu
@@ -58,10 +55,5 @@ class MovieAdapter() : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     override fun getItemCount(): Int {
         return  movieList.size
-    }
-
-    fun ChangeData(newMovieList: List<Movie?>) {
-        this.movieList = newMovieList as List<Movie>
-        notifyDataSetChanged()
     }
 }

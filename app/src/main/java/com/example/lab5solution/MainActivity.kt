@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity() {
 
         btnMain.setOnClickListener {
             var goToNextPage = Intent(this,MainMenu::class.java)
-            goToNextPage.putExtra("data",allMovies as Serializable)
+            //The code below allows to send the list of movies to the next page using Serializable
+//            goToNextPage.putExtra("data",allMovies as Serializable)
             startActivity(goToNextPage)
         }
     }
